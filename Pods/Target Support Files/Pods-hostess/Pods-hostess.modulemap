@@ -1,0 +1,6 @@
+framework module Pods_hostess {
+  umbrella header "Pods-hostess-umbrella.h"
+
+  export *
+  module * { export * }
+}
