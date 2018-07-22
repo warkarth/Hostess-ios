@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Material
+import PusherSwift
 
 struct Hero : Codable{
     let name:String?
@@ -21,7 +22,14 @@ struct Hero : Codable{
     let bio: String?
 }
 
+struct Place : Codable{
+    let name: String?
+    let street: String?
+    let description: String?
+}
+
 var heroes = [Hero]()
+var places = [Place]()
 
 class ViewController: UIViewController {
     
@@ -43,9 +51,10 @@ class ViewController: UIViewController {
     
     let gradientLayer = CAGradientLayer()
     
-    let API_URL = "https://www.simplifiedcoding.net/demos/marvel/"
+    //let API_URL = "https://www.simplifiedcoding.net/demos/marvel/"
+    let API_URL = "ec2-18-221-152-120.us-east-2.compute.amazonaws.com/api/v1/places"
 
-    /*let options = PusherClientOptions(
+    let options = PusherClientOptions(
         host: .cluster("us2")
     )
     let pusher = Pusher(
@@ -53,7 +62,7 @@ class ViewController: UIViewController {
         options: PusherClientOptions(
             host: .cluster("us2")
         )
-    )*/
+    )
     
     var scrollView: UIScrollView!
     var myView = UIView()
@@ -63,6 +72,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Gradiente
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = view.bounds
@@ -71,6 +81,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = Color.grey.lighten3
         
+        //Tamaños de pantalla
         let screensize: CGRect = view.bounds
         let screenWidth = screensize.width
         let screenHeight = screensize.height
@@ -80,6 +91,7 @@ class ViewController: UIViewController {
         myView.backgroundColor = .blue
         view.addSubview(myView)*/
         
+        //Etiquetas de inicio
         myLabel = UILabel(frame: CGRect(center: CGPoint(x: 150, y: 100), size: CGSize(width: 250, height: 200)))
         myLabel.text = "Dónde quieres turnear?"
         myLabel.textColor = Color.darkText.primary
@@ -92,20 +104,36 @@ class ViewController: UIViewController {
         lugarLbl.font = RobotoFont.regular(with: 14)
         view.addSubview(lugarLbl)
         
+        let channel = pusher.subscribe("my-channel")
+        
+        let _ = channel.bind(eventName: "my-event", callback: { (data: Any?) -> Void in
+            if let data = data as? [String : AnyObject] {
+                if let message = data["message"] as? String {
+                    self.myLabel.text = message;
+                    print(message)
+                }
+            }
+        })
+        
+        pusher.connect()
+        
+        //ScrollView
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 175, width: screenWidth, height: screenHeight - 100))
         scrollView.backgroundColor = Color.grey.lighten4
         //scrollView.layer.addSublayer(gradientLayer)
         
-        
-        loadData(){(heroes) in
+        //Carga las cartas de los lugares provenientes del request
+        loadData(){(places) in
             var i : CGFloat = 0.0
-            for hero in heroes {
+            //for hero in heroes {
+            for place in places {
                 self.prepareDateFormatter()
                 self.prepareDateLabel()
                 self.prepareFavoriteButton()
                 self.prepareMoreButton()
-                self.prepareToolbar(title: hero.name!,detail: hero.realname!)
-                self.prepareContentView(bio: hero.team!)
+                //self.prepareToolbar(title: hero.name!,detail: hero.realname!)
+                self.prepareToolbar(title: place.name!,detail: place.street!)
+                self.prepareContentView(bio: place.description!)
                 self.prepareBottomBar()
                 self.prepareCard(space: CGFloat( 300 - i))
                 i = i + self.card.bounds.height + 185.0
@@ -118,11 +146,12 @@ class ViewController: UIViewController {
     }
 }
 
-func loadData(completion: @escaping (Array<Hero>) -> Void){
+func loadData(completion: @escaping (Array<Place>) -> Void){
     //defining the API URL
-    let API_URL = "https://www.simplifiedcoding.net/demos/marvel/"
+    //let API_URL = "https://www.simplifiedcoding.net/demos/marvel/"
+    let API_URL = "ec2-18-221-152-120.us-east-2.compute.amazonaws.com/api/v1/places"
     
-    Alamofire.request(API_URL).responseJSON { response in
+    Alamofire.request(API_URL, method: .get).responseJSON { response in
         let json = response.data
         
         do{
@@ -130,22 +159,30 @@ func loadData(completion: @escaping (Array<Hero>) -> Void){
             let decoder = JSONDecoder()
             
             //using the array to put values
-            heroes = try decoder.decode([Hero].self, from: json!)
+            //heroes = try decoder.decode([Hero].self, from: json!)
+            places = try decoder.decode([Place].self, from: json!)
             
             //printing all the hero names
-            for hero in heroes{
+            /*for hero in heroes{
                 print(hero.name!)
+            }*/
+            for place in places{
+                print(place.name!)
             }
+            
             //let response = heroes + heroes
-            completion(heroes)
+            let response = places
+            completion(response)
         }catch let err{
             print(err)
+            print("YA VALIO MADRE EL REQUEST")
         }
     }
     
 }
 
 extension ViewController {
+    
     fileprivate func setNavigationBar() {
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 46.0))
@@ -226,8 +263,8 @@ extension ViewController {
         card.layer.cornerRadius = 20
         card.backgroundColor = UIColor(red: 252.0/255.0, green: 84.0/255.0, blue: 87.0/255.0, alpha: 1)
         
-        scrollView.layout(card).vertically(top: -350, bottom: space)
-        scrollView.layout(card).horizontally(left: 20, right: 20).center()
+        scrollView.layout(card).vertically(top: -1400, bottom: space)
+        scrollView.layout(card).horizontally(left: 20, right: 20).center(offsetX: 0, offsetY: -180)
     }
 }
 

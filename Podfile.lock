@@ -8,11 +8,13 @@ PODS:
   - Motion (1.3.5):
     - Motion/Core (= 1.3.5)
   - Motion/Core (1.3.5)
+  - PusherSwift (5.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Graph (~> 2.0)
   - Material (~> 2.0)
+  - PusherSwift (~> 5.1.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - Graph
     - Material
     - Motion
+    - PusherSwift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Graph: 7c525bfb1c8e57442a5b34470fbefc014d9825b1
   Material: 00e32bb5e61b3f749044897b2d93acd8bf33faa4
   Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
+  PusherSwift: de9238b6b9faec5275d452e5f43ce9c82b78731e
 
-PODFILE CHECKSUM: 79a00cd3be0dfdf91c1ff908eb1123bd525ff373
+PODFILE CHECKSUM: b5f730410c343fe22af0b5f5e1ac5984c303705a
 
 COCOAPODS: 1.5.0

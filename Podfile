@@ -9,4 +9,5 @@ target 'hostess' do
   pod 'Alamofire', '~> 4.7'
   pod 'Material', '~> 2.0'
   pod 'Graph', '~> 2.0'
+  pod 'PusherSwift', '~> 5.1.1'
 end
