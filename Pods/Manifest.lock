@@ -1,20 +1,24 @@
 PODS:
-  - Alamofire (4.7.2)
-  - Graph (2.2.0)
-  - Material (2.15.0):
-    - Material/Core (= 2.15.0)
-  - Material/Core (2.15.0):
-    - Motion (~> 1.3.0)
-  - Motion (1.3.5):
-    - Motion/Core (= 1.3.5)
-  - Motion/Core (1.3.5)
+  - Alamofire (4.7.3)
+  - Graph (2.2.2)
+  - Material (2.16.4):
+    - Material/Core (= 2.16.4)
+  - Material/Core (2.16.4):
+    - Motion (~> 1.4.3)
+  - Motion (1.4.3):
+    - Motion/Core (= 1.4.3)
+  - Motion/Core (1.4.3)
   - PusherSwift (5.1.1)
+  - QuickLayout (2.0.2)
+  - SwiftEntryKit (0.5.6):
+    - QuickLayout (= 2.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Graph (~> 2.0)
   - Material (~> 2.0)
   - PusherSwift (~> 5.1.1)
+  - SwiftEntryKit (= 0.5.6)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -23,14 +27,18 @@ SPEC REPOS:
     - Material
     - Motion
     - PusherSwift
+    - QuickLayout
+    - SwiftEntryKit
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Graph: 7c525bfb1c8e57442a5b34470fbefc014d9825b1
-  Material: 00e32bb5e61b3f749044897b2d93acd8bf33faa4
-  Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Graph: 7bb540efc73635f727126db6236598aa472be086
+  Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
+  Motion: 153ba49692997888556c7a95207278a8b1f8be95
   PusherSwift: de9238b6b9faec5275d452e5f43ce9c82b78731e
+  QuickLayout: a730730b646b231fd4ef7cffaeb1e81fe0e1ca92
+  SwiftEntryKit: 1df92ac86d36f3c8c88175687bdd61ccfecbe2ee
 
-PODFILE CHECKSUM: b5f730410c343fe22af0b5f5e1ac5984c303705a
+PODFILE CHECKSUM: 8b722d0d80a3f9ee2c7c83b2fdcb1807ebf05359
 
 COCOAPODS: 1.5.0

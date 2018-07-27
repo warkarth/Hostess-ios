@@ -10,4 +10,5 @@ target 'hostess' do
   pod 'Material', '~> 2.0'
   pod 'Graph', '~> 2.0'
   pod 'PusherSwift', '~> 5.1.1'
+  pod 'SwiftEntryKit', '0.5.6'
 end

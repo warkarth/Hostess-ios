@@ -8,15 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		011CA885AD4185D45B79203A /* Pods_hostess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519C41BF5C59C79299DDB2C3 /* Pods_hostess.framework */; };
+		2E05CE4B2106FD2100ECAF84 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05CE4A2106FD2100ECAF84 /* iOSDevCenters+GIF.swift */; };
 		2E1CC4632102592600184A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CC4622102592600184A77 /* AppDelegate.swift */; };
 		2E1CC4652102592600184A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CC4642102592600184A77 /* ViewController.swift */; };
 		2E1CC4682102592600184A77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CC4662102592600184A77 /* Main.storyboard */; };
 		2E1CC46A2102592A00184A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CC4692102592A00184A77 /* Assets.xcassets */; };
 		2E1CC46D2102592A00184A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CC46B2102592A00184A77 /* LaunchScreen.storyboard */; };
 		2E1CC47521025CCB00184A77 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CC47421025CCB00184A77 /* CardTableViewCell.swift */; };
+		2E23C4BA210ADB73000BE2BA /* ticket_1.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 2E23C4B9210ADB73000BE2BA /* ticket_1.pkpass */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E05CE4A2106FD2100ECAF84 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		2E1CC45F2102592600184A77 /* hostess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hostess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1CC4622102592600184A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1CC4642102592600184A77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +28,7 @@
 		2E1CC46C2102592A00184A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E1CC46E2102592A00184A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1CC47421025CCB00184A77 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		2E23C4B9210ADB73000BE2BA /* ticket_1.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = ticket_1.pkpass; sourceTree = "<group>"; };
 		519C41BF5C59C79299DDB2C3 /* Pods_hostess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hostess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96508A03FBCCE816D76158E0 /* Pods-hostess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hostess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hostess/Pods-hostess.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4D27DDB10AD1CB05BAE6E1 /* Pods-hostess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hostess.release.xcconfig"; path = "Pods/Target Support Files/Pods-hostess/Pods-hostess.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		2E1CC4562102592600184A77 = {
 			isa = PBXGroup;
 			children = (
+				2E23C4B9210ADB73000BE2BA /* ticket_1.pkpass */,
 				2E1CC4612102592600184A77 /* hostess */,
 				2E1CC4602102592600184A77 /* Products */,
 				41A51034449A67267818B3B1 /* Pods */,
@@ -70,6 +75,7 @@
 				2E1CC46B2102592A00184A77 /* LaunchScreen.storyboard */,
 				2E1CC46E2102592A00184A77 /* Info.plist */,
 				2E1CC47421025CCB00184A77 /* CardTableViewCell.swift */,
+				2E05CE4A2106FD2100ECAF84 /* iOSDevCenters+GIF.swift */,
 			);
 			path = hostess;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E23C4BA210ADB73000BE2BA /* ticket_1.pkpass in Resources */,
 				2E1CC46D2102592A00184A77 /* LaunchScreen.storyboard in Resources */,
 				2E1CC46A2102592A00184A77 /* Assets.xcassets in Resources */,
 				2E1CC4682102592600184A77 /* Main.storyboard in Resources */,
@@ -190,6 +197,8 @@
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -198,6 +207,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1CC4652102592600184A77 /* ViewController.swift in Sources */,
+				2E05CE4B2106FD2100ECAF84 /* iOSDevCenters+GIF.swift in Sources */,
 				2E1CC47521025CCB00184A77 /* CardTableViewCell.swift in Sources */,
 				2E1CC4632102592600184A77 /* AppDelegate.swift in Sources */,
 			);
@@ -361,7 +373,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NM789M82Q4;
 				INFOPLIST_FILE = hostess/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ricardo.hostess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -377,7 +392,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NM789M82Q4;
 				INFOPLIST_FILE = hostess/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ricardo.hostess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

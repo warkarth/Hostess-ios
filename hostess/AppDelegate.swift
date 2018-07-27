@@ -15,7 +15,7 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var restrictRotation:TypeInterfaceOrientationMask = .portrait
 
     func application(_ application: UIApplication) {
         
@@ -24,5 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
+    {
+        switch self.restrictRotation {
+        case .all:
+            return UIInterfaceOrientationMask.all
+        case .portrait:
+            return UIInterfaceOrientationMask.portrait
+        case .landscape:
+            return UIInterfaceOrientationMask.landscape
+        }
+    }
+    
+    enum TypeInterfaceOrientationMask {
+        case all
+        case portrait
+        case landscape
+    }
 }
 
