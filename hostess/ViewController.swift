@@ -139,7 +139,7 @@ class ViewController: UIViewController {
         
         //Assistant image
         imageView  = UIImageView(frame: CGRect(x: 265, y: 70, width: 90, height: 90));
-        imageView.image = UIImage(named: "rob1")
+        imageView.image = UIImage(named: "rob2")
         imageView.backgroundColor = Color.grey.lighten2
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = imageView.frame.size.width/2
@@ -208,7 +208,7 @@ class ViewController: UIViewController {
                         case "Te estamos esperando":
                             print("No show")
                             self.imageView.backgroundColor = Color.orange.lighten3
-                            self.endTimer()
+                            self.updateTime()
                             self.startTimer()
                         default:
                             self.squareColor.backgroundColor = Color.grey.lighten3
@@ -366,7 +366,7 @@ extension ViewController {
                             self.passButton.addTarget(self, action: #selector(self.loadPass(_:)), for:UIControlEvents.touchUpInside)
                             
                             self.myLabel.text = "Hostess dice: "
-                            self.lugarLbl.text = "Buscando tu mesa"
+                            self.lugarLbl.text = "Buscando tu mesa..."
                             self.view.addSubview(self.passButton)
                             
                             
